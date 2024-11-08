@@ -1,6 +1,14 @@
 name: Cross Compile for ARM64 on OpenWRT
 
 on:
+  # 手动触发工作流
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Target architecture'
+        required: true
+        default: 'arm64'
+        
   push:
     branches:
       - main
